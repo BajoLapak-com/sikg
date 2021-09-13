@@ -58,14 +58,16 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item">
-                    <a href="<?=base_url('logbook')?>" class="nav-link">
+                    <a href="<?= base_url('logbook') ?>" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Logbook
-
-                        </p>
+                        <p> Logbook </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('ujian') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> Ujian </p>
                     </a>
                 </li>
             </ul>
