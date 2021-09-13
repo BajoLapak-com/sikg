@@ -9,13 +9,11 @@ class Ujian extends CI_Controller
 
     public function index($ujian = null)
     {
-        echo "Sdasdasd";    
-        die();
         if ($ujian == "list")
-            $ujian = "v_list";
+            $ujian = 'v_list';
         else if ($ujian == "add")
-            $ujian = "v_add";
-
+            $ujian = 'v_add';
+            
         $data = [
             'isi' => 'ujian/'.$ujian,
             'select' => [
