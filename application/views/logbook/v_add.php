@@ -10,8 +10,10 @@
             <div class="modal-body">
             <form>
             <div class="card-body">
-            <div class="form-group">
-                  <label>Date:</label>
+                 
+                <div class="card-body">
+                <div class="form-group">
+                  <label>Tanggal Logbook</label>
                     <div class="input-group date" id="reservationdate" data-target-input="nearest">
                         <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate"/>
                         <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -19,7 +21,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Event</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
