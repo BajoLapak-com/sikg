@@ -39,15 +39,19 @@
                         <th>Mata Pelajaran</th>
                         <th>Kelas</th>
                         <th>Soal</th>
+                        <th>nilai</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="bg-white">
                         <td>No</td>
                         <td>Mata Pelajaran</td>
                         <td>Kelas</td>
                         <td>Soal</td>
+                        <td>
+                        <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#nilai" href=""><i class="fa fa-edit bg-primary m-2"></i></a> 1
+                        </td>
                         <td>
                             <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#edit" href=""><i class="fa fa-edit bg-primary m-2"></i></a>
                             <a class="bg-light rounded-circle" href=""><i class="fa fa-eye rounded-circle m-2"></i></a>
