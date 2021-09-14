@@ -8,7 +8,8 @@ class Logbook extends CI_Controller {
     public function index()
     {
         $data= [
-            'isi' =>'logbook/v_list'
+            'isi' =>'logbook/v_list',
+            'path' => 'logbook'
         ]; 
         $this->load->view('layout/v_wrapper', $data);
         

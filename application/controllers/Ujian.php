@@ -11,6 +11,7 @@ class Ujian extends CI_Controller
     {
         $data = [
             'isi' => 'ujian/v_list',
+            'path' => 'ujian',
             'select' => [
                 'mata pelajaran' => $this->getMataPelajaran(),
                 'kelas' => $this->getKelas()

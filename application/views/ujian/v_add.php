@@ -1,8 +1,8 @@
-<div class="modal fade" id="modal-lg">
+<div class="modal fade" id="add">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-primary">
-                <h4 class="modal-title" style="font-weight: bold;">Tambah Logbook</h4>
+                <h4 class="modal-title" style="font-weight: bold;">Tambah Ujian</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

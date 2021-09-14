@@ -104,6 +104,10 @@
         format: 'L'
     });
 
+    $('#reservationdate1').datetimepicker({
+        format: 'L'
+    });
+
     //Date and time picker
     $('#reservationdatetime').datetimepicker({ icons: { time: 'far fa-clock' } });
 
