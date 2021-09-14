@@ -7,15 +7,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Ujian extends CI_Controller
 {
 
-    public function index($ujian = null)
+    public function index()
     {
-        if ($ujian == "list")
-            $ujian = 'v_list';
-        else if ($ujian == "add")
-            $ujian = 'v_add';
-            
         $data = [
-            'isi' => 'ujian/'.$ujian,
+            'isi' => 'ujian/v_list',
             'select' => [
                 'mata pelajaran' => $this->getMataPelajaran(),
                 'kelas' => $this->getKelas()
