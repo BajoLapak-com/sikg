@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">LOOGBOOK</h1>
+            <h1 class="m-0">RPP</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Loogbook</a></li>
-              <li class="breadcrumb-item active">Daftar Loogbook</li>
+              <li class="breadcrumb-item"><a href="#">RPP</a></li>
+              <li class="breadcrumb-item active">Daftar RPP</li>
             </ol>
           </div><!-- /.col -->
             
@@ -25,7 +25,7 @@
               <div class="card-header">
                 <div class="row">
 
-                    <div class="col-8"> <button class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">Tambah Logbook</button></div>
+                    <div class="col-8"> <button class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">Upload RPP</button></div>
                     
                 </div>
               </div>
@@ -36,11 +36,8 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Event</th>
-                    <th>Target</th>
-                    <th>Masalah</th>
-                    <th>Deadline</th>
-                    <th>Aksi</th>
+                    <th>Judul</th>
+                    
                   </tr>
                   </thead>
                   <tbody>
@@ -56,5 +53,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-        <!-- /.modal -->
 <?php require_once('v_add.php')?>

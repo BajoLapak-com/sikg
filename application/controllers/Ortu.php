@@ -12,8 +12,6 @@ class Ortu extends CI_Controller {
             'isi'=> 'Guru/v_add'
         ]; 
         $this->load->view('layout/v_wrapper', $data);
-        
-        
     }
 
 }
