@@ -8,7 +8,7 @@ class Guru extends CI_Controller {
     public function index()
     {
         $data = [
-            'isi'=> 'Guru/v_add'
+            'isi'=> 'guru/v_add'
         ]; 
         $this->load->view('layout/v_wrapper', $data);
         
