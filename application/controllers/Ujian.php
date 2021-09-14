@@ -9,7 +9,6 @@ class Ujian extends CI_Controller
 
     public function index()
     {
-        echo "sdasd";
         $data = [
             'isi' => 'ujian/v_list',
             'select' => [
