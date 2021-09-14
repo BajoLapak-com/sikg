@@ -8,17 +8,17 @@ class Rpp extends CI_Controller {
 
     public function index()
     {
-        $data = [
-            'isi'=> 'Guru/v_add'
+        $data= [
+            'isi' =>'rpp/v_list'
         ]; 
         $this->load->view('layout/v_wrapper', $data);
         
-        
+
     }
 
 }
 
-/* End of file Guru.php */
+/* End of file .php */
 
 
 ?>
