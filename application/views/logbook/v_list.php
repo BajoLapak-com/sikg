@@ -25,7 +25,7 @@
      <div class="card-header">
        <div class="row">
 
-         <div class="col-8"> <button class="btn btn-primary" data-toggle="modal" data-target="#modal-lg">Tambah Logbook</button></div>
+         <div class="col-8"> <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Logbook</button></div>
 
        </div>
      </div>
@@ -39,19 +39,19 @@
              <th>Event</th>
              <th>Target</th>
              <th>Masalah</th>
-             <th>Deadline</th>
              <th>Aksi</th>
            </tr>
          </thead>
          <tbody>
+           <?php $no=1;  foreach($log as $key =>$value){?>
            <tr>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
-             <td>1</td>
+             <td><?=$no++?></td>
+             <td><?=$value->nama_kegiatan?></td>
+             <td><?=$value->target?></td>
+             <td><?=$value->masalah?></td>
+             <td><i class="fa fa-eye" style="color:blue"></i></td>
            </tr>
+           <?php } ?>
          </tbody>
 
        </table>

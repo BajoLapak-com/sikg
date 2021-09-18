@@ -8,7 +8,8 @@ class Event extends CI_Controller {
     public function index()
     {
         $data = [
-            'isi'=>'event/v_add'
+            'isi'=>'event/v_add',
+            'path'=>'event',
         ]; 
         $this->load->view('layout/v_wrapper', $data, FALSE);
         
