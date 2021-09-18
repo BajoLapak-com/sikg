@@ -4,8 +4,12 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ujian extends CI_Controller
-{
+class Ujian extends CI_Controller {
+
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('M_ujian','mu');
+    }
 
     public function index()
     {
@@ -15,7 +19,8 @@ class Ujian extends CI_Controller
             'select' => [
                 'mata pelajaran' => $this->getMataPelajaran(),
                 'kelas' => $this->getKelas()
-            ]
+            ],
+            'ujian' => $this->getUjian()
         ];
         $this->load->view('layout/v_wrapper', $data);
     }
@@ -60,8 +65,7 @@ class Ujian extends CI_Controller
 
     public function getUjian()
     {
-        $data = [];
-        return $data;
+        return $this->mu->getUjian();
     }
 
     /*post method
@@ -69,8 +73,17 @@ class Ujian extends CI_Controller
     ----------------------------*/
     public function postUjian()
     {
-        $data = [];
-        return $data;
+        $data = [
+            'id_guru' => 1,
+            'id_mata_pelajaran' => $this->input->post('matapelajaran'),
+            'id_kelas' => $this->input->post('kelas'),
+            'rata_nilai' => 0,
+            'tgl_ujian' => $this->input->post('tgl_ujian'),
+            'tipe' => $this->input->post('tipe'),
+            'file' => $this->input->post('file'),
+        ];
+
+        $this->mu->postUjian($data);
     }
 
     /*put method

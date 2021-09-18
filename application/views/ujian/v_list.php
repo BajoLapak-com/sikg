@@ -38,26 +38,27 @@
                         <th>No</th>
                         <th>Mata Pelajaran</th>
                         <th>Kelas</th>
-                        <th>Soal</th>
                         <th>nilai</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="bg-white">
-                        <td>No</td>
-                        <td>Mata Pelajaran</td>
-                        <td>Kelas</td>
-                        <td>Soal</td>
-                        <td>
-                        <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#nilai" href=""><i class="fa fa-edit bg-primary m-2"></i></a> 1
-                        </td>
-                        <td>
-                            <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#edit" href=""><i class="fa fa-edit bg-primary m-2"></i></a>
-                            <a class="bg-light rounded-circle" href=""><i class="fa fa-eye rounded-circle m-2"></i></a>
-                            <a class="bg-danger rounded-circle" href=""><i class="fa fa-trash-alt bg-danger rounded-circle m-2"></i></a>
-                        </td>
-                    </tr>
+                    <?php $no = 1;
+                    foreach ($ujian as $key => $value) { ?>
+                        <tr class="bg-white">
+                            <td><?= $no++ ?></td>
+                            <td><?= $value->id_mata_pelajaran ?></td>
+                            <td><?= $value->id_kelas ?></td>
+                            <td>
+                                <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#nilai" href=""><i class="fa fa-edit bg-primary m-2"></i></a> <?= $value->rata_nilai ?>
+                            </td>
+                            <td>
+                                <a class="bg-primary rounded-circle" data-toggle="modal" data-target="#edit" href=""><i class="fa fa-edit bg-primary m-2"></i></a>
+                                <a class="bg-light rounded-circle" href="<?= $value->file ?>"><i class="fa fa-eye rounded-circle m-2"></i></a>
+                                <a class="bg-danger rounded-circle" href=""><i class="fa fa-trash-alt bg-danger rounded-circle m-2"></i></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
 
             </table>
