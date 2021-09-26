@@ -18,11 +18,19 @@ class M_log extends CI_Model {
         
         
     }
-    public function detail(){
+    public function detail($id_log){
         $this->db->select('*');
         $this->db->from('tbl_logbook');
+        $this->db->where('id_log', $id_log);
+        
         return $this->db->get()->row(); 
         
+        
+    }
+    public function delete($id){
+        $this->db->where('id_log', $id);
+        $this->db->delete('tbl_logbook');
+        return  $this->db->affected_rows();
         
     }
 

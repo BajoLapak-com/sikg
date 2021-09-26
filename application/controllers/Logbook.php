@@ -34,7 +34,16 @@ class Logbook extends CI_Controller {
          ] ; 
          $this->m_log->add($data); 
     }
-
+    public function delete($id){
+        $data  =$this->m_log->delete($id); 
+        if($data>0){
+            echo "Sukses"; 
+        }
+        else{
+            die(); 
+        }
+    }
+    
     
 }
 

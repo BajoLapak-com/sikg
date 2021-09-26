@@ -49,7 +49,8 @@
              <td><?=$value->nama_kegiatan?></td>
              <td><?=$value->target?></td>
              <td><?=$value->masalah?></td>
-             <td><i class="fa fa-eye" style="color:blue"></i></td>
+             <td class=""><div class="container"> <i class="fa fa-eye" style="color:blue"></i>
+            <a class="ml-2" href="<?=base_url('logbook/delete/'.$value->id_log)?>"><i style="color: red;" class="fa fa-trash"></i></a>  </div></td>
            </tr>
            <?php } ?>
          </tbody>
