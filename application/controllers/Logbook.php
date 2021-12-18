@@ -9,7 +9,7 @@ class Logbook extends CI_Controller {
     {
         parent::__construct(); 
         $this->load->model('m_log');
-        
+            
         
     }
     public function index()

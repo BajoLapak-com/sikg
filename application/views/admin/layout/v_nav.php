@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="<?= base_url() ?>template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Kepala Sekolah</span>
     </a>
 
     <!-- Sidebar -->
@@ -41,23 +41,23 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item menu-open ">
+                <li class="nav-item  ">
                     <a href="#" class="nav-link ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Timeline
+                            Dashboard
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview ">
                         <li class="nav-item">
-                            <a href="<?= base_url('timeline') ?>" class="nav-link <?php if ($path == 'timeline') echo 'active' ?>">
+                            <a href="<?= base_url('timeline') ?>" class="nav-link  ">
                                 <i class="fas fa-sticky-note    nav-icon" aria-hidden="true"></i>
                                 <p class="lik">Note TimeLine</p>
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="<?= base_url('event') ?>" class="nav-link <?php if ($path == 'event') echo 'active' ?>">
+                            <a href="<?= base_url('event') ?>" class="nav-link ">
                                 <i class="far fa-calendar nav-icon"></i>
                                 <p class="lik">Event</p>
                             </a>
@@ -68,16 +68,40 @@
                                 <p class="lik"> Kalender Jadwal</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-calendar nav-icon"></i>
+                                <p class="lik">Logbook Guru</p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item ">
-                    <a href="<?= base_url('logbook') ?>" class="nav-link <?php if ($path == 'logbook') echo 'active' ?>">
+                    <a href="<?= base_url('admin/guru') ?>" class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>
-                        <p> Logbook </p>
+                        <p> RPP </p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="<?= base_url('admin/guru') ?>" class="nav-link ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> Guru </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('ujian') ?>" class="nav-link <?php if ($path == 'ujian') echo 'active' ?> ">
+                    <a  class="nav-link ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> Nilai </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> Ulangan </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link ">
                         <i class="nav-icon fas fa-book"></i>
                         <p> Ujian </p>
                     </a>

@@ -3,20 +3,13 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="<?= base_url() ?>template/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light"><b> GURU</b></span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="<?= base_url() ?>template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
-            </div>
-        </div>
+        
 
         <!-- SidebarSearch Form -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,16 +63,35 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item ">
+                <!-- <li class="nav-item ">
                     <a href="<?= base_url('logbook') ?>" class="nav-link <?php if ($path == 'logbook') echo 'active' ?>">
                         <i class="nav-icon fas fa-book"></i>
                         <p> Logbook </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="<?= base_url('ujian') ?>" class="nav-link <?php if ($path == 'ujian') echo 'active' ?> ">
                         <i class="nav-icon fas fa-book"></i>
                         <p> Ujian </p>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="<?= base_url('ulangan') ?>" class="nav-link <?php if ($path == 'ulangan') echo 'active' ?> ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> Ulangan</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('rpp') ?>" class="nav-link <?php if ($path == 'rpp') echo 'active' ?> ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> RPP</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('kd') ?>" class="nav-link <?php if ($path == 'kd') echo 'active' ?> ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p> KD</p>
                     </a>
                 </li>
             </ul>

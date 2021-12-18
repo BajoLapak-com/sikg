@@ -1,26 +1,25 @@
-<!-- Goldian -->
-<!-- question  -->
 <?php
-
 defined('BASEPATH') or exit('No direct script access allowed');
+class Ujian extends CI_Controller
+{
 
-class Ujian extends CI_Controller {
-
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
-        $this->load->model('M_ujian','mu');
+        $this->load->model('m_ujian', 'mu');
+        $this->load->library('uploadfile');
     }
-
+    //  Jurusan 1 =multimedia ;
+    // jurusan 2 = menjahit  ;
+    // Nama File Soal sama dengan nama_guru_kelas_jurusan_mataPelajaran
     public function index()
     {
+
         $data = [
             'isi' => 'ujian/v_list',
             'path' => 'ujian',
-            'select' => [
-                'mata pelajaran' => $this->getMataPelajaran(),
-                'kelas' => $this->getKelas()
-            ],
-            'ujian' => $this->getUjian()
+            'data' => $this->mu->listUjian(),
+
         ];
         $this->load->view('layout/v_wrapper', $data);
     }
@@ -28,82 +27,57 @@ class Ujian extends CI_Controller {
     /*get method
     /
     ----------------------------*/
-    public function getMataPelajaran()
+    public function post()
     {
-        $data = [
-            'matematika',
-            'bahasa indonesia',
-            'bahasa inggris',
-            'ipa'
-        ];
-        return $data;
+        $mapel = $this->input->post('mapel');
+
+        $jurusan = $this->input->post('jurusan');
+        $kelas = $this->input->post('kelas');
+        $tgl_ujian = $this->input->post('tgl_ujian');
+
+        try {
+            //code...
+            if (empty($_FILES)) {
+                throw new Exception("File Upload Kosong");
+            }
+            $fileName = 'soal';
+            $upload = $this->uploadfile->ujian($mapel,$kelas,$fileName);
+            if (empty($upload)) {
+                throw new Exception("Gagal Upload Soal");
+            }
+
+            $data = [
+                'mapel' => $mapel,
+                'id_guru' => 1,
+                'jurusan' => $jurusan,
+                'kelas' => $kelas,
+                'tgl_ujian' => $tgl_ujian,
+                'soal' => $upload['soal']
+
+            ];
+            $this->mu->post($data);
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        die();
     }
-    public function getKelas()
+    public function readFile($fileName)
     {
-        $data = [
-            'Kelas 1 A',
-            'Kelas 2 A',
-            'Kelas 3 A',
-            'Kelas 4 A',
-            'Kelas 5 A',
-            'Kelas 6 A',
-            'Kelas 1 B',
-            'Kelas 2 B',
-            'Kelas 3 B',
-            'Kelas 4 B',
-            'Kelas 5 B',
-            'Kelas 6 B',
-            'Kelas 1 C',
-            'Kelas 2 C',
-            'Kelas 3 C',
-            'Kelas 4 C',
-            'Kelas 5 C',
-            'Kelas 6 C',
-        ];
-        return $data;
+        $path = "./fileUjian/" . $fileName;
+        echo $path;
+        header("Content-type: application/pdf");
+
+        header("Content-Length: " . filesize($path));
+
+        // Send the file to the browser.
+        readfile($path);
+    }
+    public function detailUjian($id){
+        $data = $this->mu->detailUjian($id) ;
+        print_r($data) ;
     }
 
-    public function getUjian()
-    {
-        return $this->mu->getUjian();
-    }
-
-    /*post method
-    /
-    ----------------------------*/
-    public function postUjian()
-    {
-        $data = [
-            'id_guru' => 1,
-            'id_mata_pelajaran' => $this->input->post('matapelajaran'),
-            'id_kelas' => $this->input->post('kelas'),
-            'rata_nilai' => 0,
-            'tgl_ujian' => $this->input->post('tgl_ujian'),
-            'tipe' => $this->input->post('tipe'),
-            'file' => $this->input->post('file'),
-        ];
-
-        $this->mu->postUjian($data);
-    }
-
-    /*put method
-    /
-    ----------------------------*/
-    public function putUjian()
-    {
-        $data = [];
-        return $data;
-    }
-
-    /*delete method
-    /
-    ----------------------------*/
-    public function deleteUjian()
-    {
-        $data = [];
-        return $data;
-    }
 }
 
 /* End of file Ujian.php */
-?>

@@ -85,4 +85,3 @@
         <!-- /.modal-dialog -->
     </form>
 </div>
-<!-- /.modal -->
